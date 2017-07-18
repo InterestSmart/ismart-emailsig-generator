@@ -5,7 +5,7 @@ const vm = new Vue({
             .replace(/^\?/, '')
             .split('&')
             .forEach(pair => {
-                let [param, val = ''] = decodeURIComponent(pair.replace(/\+/,' ')).split('=');
+                let [param, val = ''] = decodeURIComponent(pair.replace(/\+/g,' ')).split('=');
                 this[param] = val;
             });
     },
